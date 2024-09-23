@@ -49,19 +49,11 @@ function handleCombat(playerUnits, enemyUnits) {
 
 // Función que verifica si dos unidades colisionan
 function checkCollision(unit1, unit2) {
-    const unit1Right = unit1.x + 50; // Asumiendo que todas las unidades tienen 50 de ancho
+    const unit1Right = unit1.x + 50; 
     const unit2Left = unit2.x;
 
-    // Si el lado derecho de una unidad alcanza o supera el lado izquierdo de la otra
+   
     return unit1Right >= unit2Left;
 }
 
-// Función para determinar el daño del gato
-function getPlayerDamage(cat) {
-    if (cat.type === 'tank') {
-        return 0.1; // Gato tanque inflige más daño
-    } else if (cat.type === 'train') {
-        return 99999999999999999999; // Gato rápido inflige más daño
-    }
-    return 99999999; // Daño estándar
-}
+

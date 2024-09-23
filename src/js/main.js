@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('battlefield');
 const ctx = canvas.getContext('2d');
 
@@ -57,7 +56,7 @@ class Unit {
     
     draw() {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-        this.drawHealth();  // Dibujar la barra de vida encima de la unidad
+        this.drawHealth(); 
     }
 
     // Función para mover la unidad
@@ -210,7 +209,7 @@ function checkCollision(unit1, unit2) {
            unit1.y + unit1.height > unit2.y;
 }
 
-// Workers para las unidades
+// Recibir mensajes del worker
 enemyWorker.onmessage = function(event) {
     if (event.data.action === 'spawnEnemy') {
         spawnEnemy();
@@ -343,10 +342,10 @@ function drawBase() {
 function checkGameOver() {
     if (playerBaseHealth <= 0) {
         
-        window.location.href = 'gameOver.html'; // Redirigir a la pantalla de Game Over
+        window.location.href = 'gameOver.html'; 
     } else if (enemyBaseHealth <= 0) {
     
-        window.location.href = 'victory.html'; // Redirigir a la pantalla de victoria
+        window.location.href = 'victory.html'; 
     }
 }
 
@@ -371,7 +370,7 @@ function gameLoop() {
     checkGameOver(); 
 }
 
-// Funciones auxiliares y eventos
+
 function updateMoney() {
     document.getElementById('money').textContent = money;
 }
@@ -380,6 +379,6 @@ document.getElementById('spawnCat').addEventListener('click', spawnCat);
 document.getElementById('spawnCatTank').addEventListener('click', spawnCatTank);
 document.getElementById('spawnCatTrain').addEventListener('click', spawnCatTrain);
 
-// Iniciar el ciclo de juego
+
 gameLoop();
 
