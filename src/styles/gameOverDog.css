@@ -1,0 +1,42 @@
+.game-over-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-over-gif {
+    width: 300px; /* Ajusta el tamaño según tu GIF */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.restart-button {
+    background-color: #ff4757;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+    background-color: #e84118;
+}

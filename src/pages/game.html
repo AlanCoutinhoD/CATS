@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATS VS DOGS</title>
+    <link rel="stylesheet" href="../styles/game.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<body>
+    <center>
+        <canvas id="battlefield" width="800" height="500"></canvas>
+        <div>
+            <img id="spawnCat" src="../img/catButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
+            <img id="spawnCatTank" src="../img/catTankButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
+            <img id="spawnCatTrain" src="../img/catTrainButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
+            <p>Dinero: <span id="money">100</span></p> <!-- Mostrar el dinero disponible -->
+        </div>
+        <audio id="backgroundMusic" src="../sounds/background.mp3" loop></audio>
+        <button id="startButton">Iniciar</button>
+        <script>
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const startButton = document.getElementById('startButton');
+
+            startButton.addEventListener('click', () => {
+                backgroundMusic.play().catch(error => {
+                    console.error("Error al reproducir la música:", error);
+                });
+            });
+        </script>
+        <script type="module" src="../js/main.js"></script>
+    </center>
+</body>
+</html>

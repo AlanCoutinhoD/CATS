@@ -1,0 +1,45 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #4CAF50;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.victory-gif {
+    width: 300px; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.restart-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+    background-color: #45a049;
+}
