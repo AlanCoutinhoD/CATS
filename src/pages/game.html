@@ -4,30 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATS VS DOGS</title>
-    <link rel="stylesheet" href="../styles/game.css"> <!-- Enlaza el archivo CSS -->
+    <link rel="stylesheet" href="../styles/game.css">
+    <style>
+        /* Fondo del juego */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url('../img/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Pantalla de inicio */
+        #startScreen {
+            text-align: center;
+            position: absolute;
+            z-index: 1; /* Asegura que el menú esté sobre el fondo */
+        }
+
+        /* El juego con el canvas */
+        #gameScreen {
+            display: block; /* Asegura que el canvas esté visible todo el tiempo */
+            z-index: 0; /* Fondo de juego detrás del menú */
+        }
+
+        /* Ajustes para los botones */
+        #startButton {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <center>
-        <canvas id="battlefield" width="800" height="500"></canvas>
-        <div>
-            <img id="spawnCat" src="../img/catButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
-            <img id="spawnCatTank" src="../img/catTankButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
-            <img id="spawnCatTrain" src="../img/catTrainButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
-            <p>Dinero: <span id="money">100</span></p> <!-- Mostrar el dinero disponible -->
-        </div>
-        <audio id="backgroundMusic" src="../sounds/background.mp3" loop></audio>
-        <button id="startButton">Iniciar</button>
-        <script>
-            const backgroundMusic = document.getElementById('backgroundMusic');
-            const startButton = document.getElementById('startButton');
 
-            startButton.addEventListener('click', () => {
-                backgroundMusic.play().catch(error => {
-                    console.error("Error al reproducir la música:", error);
-                });
-            });
-        </script>
-        <script type="module" src="../js/main.js"></script>
-    </center>
+    <!-- Pantalla de inicio -->
+    <div id="startScreen">
+        <h1>CATS VS DOGS</h1>
+        <button id="startButton">Iniciar</button>
+    </div>
+
+    <!-- Pantalla del juego -->
+    <div id="gameScreen" style="display: none;">
+        <center>
+            <canvas id="battlefield" width="800" height="500"></canvas>
+            <audio id="backgroundMusic" src="../sounds/background.mp3" loop></audio>
+
+            <div style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px;">
+                <img id="spawnCat" src="../img/catButton.png" alt="Generar Gato" style="cursor: pointer; width: 100px; height: auto;">
+                <img id="spawnCatTank" src="../img/catTankButton.png" alt="Generar Gato Tanque" style="cursor: pointer; width: 100px; height: auto;">
+                <img id="spawnCatTrain" src="../img/catTrainButton.png" alt="Generar Tren de Gato" style="cursor: pointer; width: 100px; height: auto;">
+            </div>
+
+            <p style="text-align: center;">Dinero: <span id="money">100</span></p>
+        </center>
+    </div>
+
+    <!-- Solo carga el script de inicio (inicio.js) -->
+    <script src="../js/menu/inicio.js"></script> <!-- JS file for start screen logic -->
+
 </body>
 </html>

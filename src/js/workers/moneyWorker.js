@@ -1,4 +1,4 @@
-// moneyWorker.js
+
 self.onmessage = function(event) {
     if (event.data.action === 'start') {
         startMoneyGeneration();
